@@ -340,6 +340,63 @@ img {
 .skills__img {
   border-radius: 0.5rem;
 }
+/* ========cp-card=========== */
+.cp-container {
+	display: flex;
+	gap: 20px;
+	background: white;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.chart-container {
+	width: 250px;
+	position: relative;
+}
+.stats {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.stat-box {
+	background: #f8f9fa;
+	padding: 10px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+#innerCircleText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.big-text {
+    font-size: 24px; /* Bigger size for total solved */
+    font-weight: bold;
+}
+
+.small-text {
+    font-size: 14px; /* Smaller size for total questions */
+    color: gray;
+}
+.leetcode-stat-logo {
+    width: 24px; /* Adjust the size */
+    height: auto;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.codeforces-stat-logo {
+    width: 24px; /* Adjust the size */
+    height: auto;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+
 
 /* ===== WORK =====*/
 .work__container {
