@@ -343,6 +343,7 @@ img {
 /* ========cp-card=========== */
 .cp-container {
 	display: flex;
+	flex-direction: column; /*changed */
 	gap: 20px;
 	background: white;
 	padding: 20px;
