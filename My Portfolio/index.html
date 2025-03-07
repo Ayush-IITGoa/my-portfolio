@@ -18,8 +18,11 @@
             <nav class="nav bd-grid">
                 <div>
                     <a href="#" class="nav__logo">Ayush Raj</a>
+					<button id="theme-toggle" class="theme-toggle">
+						<span class="theme-icon">🌙</span> <!-- Changes dynamically -->
+					</button>
                 </div>
-
+				
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
                         <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
@@ -52,7 +55,7 @@
 							 alt="Linkdin" width="24">
 					</a>
                     <a href="https://github.com/Ayush-IITGoa" class="home__social-icon" target="_blank">
-						<img src="assets/img/github.svg" 
+						<img src="assets/img/techstack/github.svg" 
 							 alt="Github" width="24">
 					</a>
 					<a href="https://leetcode.com/u/itssme_ayush/" class="home__social-icon" target="_blank">
@@ -60,7 +63,7 @@
 							 alt="LeetCode" width="24">
 					</a>
 					<a href="https://codeforces.com/profile/Itssme_Ayush" class="home__social-icon" target="_blank">
-						<img src="assets/img/cf.png" 
+						<img src="assets/img/techstack/code-forces.svg" 
 							 alt="Codeforces" width="24">
 					</a>
                 </div>
@@ -89,7 +92,7 @@
                     
                     <div>
                         <h2 class="about__subtitle">I'm Ayush</h2>
-                        <p class="about__text">An adaptable and energetic engineering student driven by a deep passion for the realm of computer programming.Commited to dedicate myself to world with whatever contribution I can through my technical or anlytical skills.</p>           
+                        <p class="about__text">An adaptable and energetic engineering student driven by a deep passion for the realm of computer programming. Commited to dedicate myself to world with whatever contribution I can through my technical or anlytical skills.</p>           
                     </div>                                   
                 </div>
             </section>
@@ -144,9 +147,9 @@
 							</div>
 							<div class="skills__data">
 								<div class="skills__names">
-									<img src="assets/img/techstack/html.png" 
+									<img src="assets/img/techstack/ux-ui.png" 
 										 alt="HTML5" >
-									<span class="skills__name">UX/UI</span>
+									<span class="skills__name"></span>
 								</div>
 								<!-- <div class="skills__bar skills__ux">
 									
@@ -206,9 +209,9 @@
 							</div>	
 							<div class="skills__data">
 								<div class="skills__names">
-									<img src="assets/img/techstack/codeforces.png" 
-										 alt="HTML5" >
-									<span class="skills__name"></span>
+									<img src="assets/img/techstack/code-forces.svg" 
+										 alt="CF" >
+									<span class="skills__name">Codeforces</span>
 								</div>
 							</div>				
 						</div>
@@ -238,7 +241,7 @@
 						<div class="stat-cf">
 							
 							<h3>
-								<img src="assets/img/techstack/codeforces.png" alt="" class="codeforces-stat-logo">
+								<img src="assets/img/techstack/code-forces.svg" alt="" class="codeforces-stat-logo">
 								Codeforces Stats
 							</h3>
 							<p id="cfCurrentRating">---</p> <!-- Display CF Rating -->
@@ -248,7 +251,7 @@
 						</div>
 						
 						
-					</div>
+					</div> 
 					
                     <!-- <div>              
                         <img src="assets/img/work3.jpg" alt="" class="skills__img">
@@ -287,11 +290,14 @@
                 <h2 class="section-title">Contact</h2>
 
                 <div class="contact__container bd-grid">
-                    <form action="" class="contact__form">
-                        <input type="text" placeholder="Name" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                        <input type="button" value="Send" class="contact__button button">
+                    <form action="https://api.web3forms.com/submit" method="POST" class="contact__form">
+
+						<input type="hidden" name="access_key" value="5960fe52-f671-4a98-8f74-f9ee7608abb8">
+
+                        <input type="text" name="Name" placeholder="Name" class="contact__input" required>
+                        <input type="mail" name="Email" placeholder="Email" class="contact__input" required>
+                        <textarea name="message" placeholder="Your Message" id="" cols="0" rows="10" class="contact__input" required></textarea>
+                        <input type="submit" value="Send" class="contact__button button">
                     </form>
                 </div>
             </section>

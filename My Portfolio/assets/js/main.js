@@ -154,4 +154,28 @@ async function fetchCodeforcesStats() {
 // Fetch CF stats when page loads
 fetchCodeforcesStats();
 
+// ===== For toggling Theme ==========
+const toggleButton = document.getElementById("theme-toggle");
+const themeIcon = toggleButton.querySelector(".theme-icon");
+const body = document.body;
+
+// Check and apply saved theme
+if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark-theme");
+    themeIcon.textContent = "\u2600"; // Sun emoji for light mode
+}
+
+toggleButton.addEventListener("click", () => {
+    body.classList.toggle("dark-theme");
+
+    if (body.classList.contains("dark-theme")) {
+        themeIcon.textContent = "\u2600"; // Sun emoji for light mode
+        localStorage.setItem("theme", "dark");
+    } else {
+        themeIcon.textContent = "🌙"; // Moon emoji for dark mode
+        localStorage.setItem("theme", "light");
+    }
+});
+
+
 
