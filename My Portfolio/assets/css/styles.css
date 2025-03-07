@@ -10,6 +10,10 @@
   --hue-color: 224;
   --first-color: hsl(var(--hue-color), 89%, 60%);
   --second-color: hsl(var(--hue-color), 56%, 12%);
+  --bg-color: hsl(0, 0%, 100%); /* White background for light mode */
+  --text-color: var(--second-color);
+  --box-shadow:0 0 10px rgba(0, 0, 0, 0.1);
+
   /*===== Fuente y tipografia =====*/
   --body-font: "Poppins", sans-serif;
   --big-font-size: 2rem;
@@ -24,6 +28,12 @@
   /*===== z index =====*/
   --z-back: -10;
   --z-fixed: 100;
+}
+/* Dark Theme */
+.dark-theme {
+	--bg-color: hsl(var(--hue-color), 30%, 10%); /* Dark background */
+	--text-color: hsl(var(--hue-color), 100%, 85%);
+	--box-shadow:0 -4px 10px rgba(255, 255, 255, 0.1);
 }
 @media screen and (min-width: 968px) {
   :root {
@@ -47,7 +57,9 @@ body {
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  color: var(--second-color);
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;/* Smooth transition*/
 }
 
 h1, h2, p {
@@ -155,6 +167,21 @@ img {
 }
 .nav__logo {
   color: var(--second-color);
+}
+.theme-toggle {
+    background: white;
+    /* color: white; */
+    border: none;
+    padding: 8px 14px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: back-ground 0.3s ease, transform 0.2s;
+}
+
+.theme-toggle:hover {
+    /* background: hsl(var(--hue-color), 100%, 50%); */
+    transform: scale(1.1);
 }
 .nav__toggle {
   color: var(--second-color);
@@ -281,7 +308,7 @@ img {
   padding: 0.5rem 1rem;
   margin-bottom: var(--mb-4);
   border-radius: 0.5rem;
-  box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15); 
+  box-shadow: var(--box-shadow); 
   /* ---------- Added---- */
   /* flex-direction: column; */
   width: 100px; /* Square size */
@@ -311,6 +338,11 @@ img {
   text-align: center;
 
 }
+.skills__names img {
+    display: block;
+    width: 50px; /* Set a reasonable size */
+}
+
 .skills__name {
 	/* margin-top: 0.5rem; Space between icon and text */
 	font-weight: bold;
@@ -345,10 +377,12 @@ img {
 	display: flex;
 	flex-direction: column; /*changed */
 	gap: 20px;
-	background: white;
+	background: var(--bg-color);
 	padding: 20px;
 	border-radius: 10px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	box-shadow: var(--box-shadow);
+	/* For dark theme */
+	/* box-shadow: 0 -4px 10px rgba(255, 255, 255, 0.1); */ 
 }
 .chart-container {
 	width: 250px;
@@ -404,7 +438,7 @@ img {
   row-gap: 2rem;
 }
 .work__img {
-  box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
+  box-shadow: var(--box-shadow);
   border-radius: 0.5rem;
   overflow: hidden;
 }
