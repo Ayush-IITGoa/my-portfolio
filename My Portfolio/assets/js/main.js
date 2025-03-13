@@ -108,6 +108,8 @@ function drawChart(easy, medium, hard,totalQuestions) {
             datasets: [{
                 data: [easy, medium, hard],
                 backgroundColor: ['#1CBABA', 'orange', 'red'],
+				borderColor: 'transparent',
+				borderWidth: 0, 
 				borderRadius: 10,
             }]
         },
