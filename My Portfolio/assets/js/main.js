@@ -157,27 +157,43 @@ async function fetchCodeforcesStats() {
 fetchCodeforcesStats();
 
 // ===== For toggling Theme ==========
-const toggleButton = document.getElementById("theme-toggle");
-const themeIcon = toggleButton.querySelector(".theme-icon");
-const body = document.body;
+// const toggleButton = document.getElementById("theme-toggle");
+// const themeIcon = toggleButton.querySelector(".theme-icon");
+// const body = document.body;
 
-// Check and apply saved theme
+// // Check and apply saved theme
+// if (localStorage.getItem("theme") === "dark") {
+//     body.classList.add("dark-theme");
+//     themeIcon.textContent = "\u2600"; // Sun emoji for light mode
+// }
+
+// toggleButton.addEventListener("click", () => {
+//     body.classList.toggle("dark-theme");
+
+//     if (body.classList.contains("dark-theme")) {
+//         themeIcon.textContent = "\u2600"; // Sun emoji for light mode
+//         localStorage.setItem("theme", "dark");
+//     } else {
+//         themeIcon.textContent = "🌙"; // Moon emoji for dark mode
+//         localStorage.setItem("theme", "light");
+//     }
+// });
+
+// ===================== Changed theme button ============== //
+// document.querySelector('.theme-switch__checkbox').addEventListener('change', () => {
+// 	document.body.style.backgroundColor = 'black';
+//   });
+  
+const toggleCheckbox = document.querySelector('.theme-switch__checkbox');
+const body = document.body;
+// // Check and apply saved theme
 if (localStorage.getItem("theme") === "dark") {
     body.classList.add("dark-theme");
-    themeIcon.textContent = "\u2600"; // Sun emoji for light mode
 }
-
-toggleButton.addEventListener("click", () => {
-    body.classList.toggle("dark-theme");
-
-    if (body.classList.contains("dark-theme")) {
-        themeIcon.textContent = "\u2600"; // Sun emoji for light mode
-        localStorage.setItem("theme", "dark");
-    } else {
-        themeIcon.textContent = "🌙"; // Moon emoji for dark mode
-        localStorage.setItem("theme", "light");
-    }
+toggleCheckbox.addEventListener('change', () => {
+    body.classList.toggle('dark-theme');
 });
+
 
 
 
