@@ -187,9 +187,10 @@ fetchCodeforcesStats();
 const toggleCheckbox = document.querySelector('.theme-switch__checkbox');
 const body = document.body;
 // // Check and apply saved theme
-if (localStorage.getItem("theme") === "dark") {
-    body.classList.add("dark-theme");
-}
+// Testing bug of them toggling
+// if (localStorage.getItem("theme") === "dark") {
+//     body.classList.add("dark-theme");
+// }
 toggleCheckbox.addEventListener('change', () => {
     body.classList.toggle('dark-theme');
 });
