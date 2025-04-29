@@ -187,7 +187,6 @@ fetchCodeforcesStats();
 const toggleCheckbox = document.querySelector('.theme-switch__checkbox');
 const body = document.body;
 // // Check and apply saved theme
-// Testing bug of them toggling
 // if (localStorage.getItem("theme") === "dark") {
 //     body.classList.add("dark-theme");
 // }
@@ -195,6 +194,60 @@ toggleCheckbox.addEventListener('change', () => {
     body.classList.toggle('dark-theme');
 });
 
+// scrolling wheel for work section
+// document.addEventListener('DOMContentLoaded', function() {
+//     const workContainer = document.querySelector('.work__container');
+    
+//     // Add horizontal scroll with mouse wheel
+//     workContainer.addEventListener('wheel', function(e) {
+//       if (e.deltaY !== 0) {
+//         e.preventDefault();
+//         workContainer.scrollLeft += e.deltaY;
+//       }
+//     }, { passive: false });
+//   });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const workContainer = document.querySelector('.work__container');
+    
+    // Add event listener for mouse wheel over the container
+    workContainer.addEventListener('wheel', function(event) {
+      // Prevent the default vertical scroll
+      event.preventDefault();
+      
+      // Determine scroll amount based on the wheel delta
+      const scrollAmount = event.deltaY * 2; // Adjust multiplier for sensitivity
+      
+      // Scroll horizontally
+      workContainer.scrollLeft += scrollAmount;
+    }, { passive: false });
+    
+    // Optional: Add scroll indicators/navigation
+    const scrollIndicatorContainer = document.createElement('div');
+    scrollIndicatorContainer.className = 'scroll-indicator';
+    scrollIndicatorContainer.innerHTML = '<span>⟵ Scroll ⟶</span>';
+    
+    // Add indicator after work container
+    workContainer.parentNode.insertBefore(scrollIndicatorContainer, workContainer.nextSibling);
+    
+    // Additional styles for the indicator
+    const style = document.createElement('style');
+    style.textContent = `
+      .scroll-indicator {
+        text-align: center;
+        padding: 1rem 0;
+        color: var(--text-color-light);
+        font-size: 0.85rem;
+        opacity: 0.7;
+      }
+      
+      @media (hover: none) {
+        .scroll-indicator {
+          display: none;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  });
 
 
